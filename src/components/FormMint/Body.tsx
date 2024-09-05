@@ -5,7 +5,6 @@ import images1 from '@/assets/img/base.png';
 import { useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useState } from 'react';
-import { NextItemData } from './Progress';
 
 export const BodyForm = () => {
   const [switcherState, setSwitcherState] = useState(true);
@@ -37,9 +36,8 @@ const Switcher = ({ state, setState }: { state: boolean; setState: React.Dispatc
 
 const Form = ({ switcherState, setState }: { switcherState: boolean; setState: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const queryClient = useQueryClient();
-  const data: NextItemData | undefined = queryClient.getQueryData(['next_item']);
-  if (!data) return <div>Loading...</div>;
-  console.log(data);
+  console.log(queryClient.getQueryCache().find({ queryKey: ['posts'] }));
+
   return (
     <div>
       <p>ffffffffffffff</p>
