@@ -2,9 +2,9 @@
 
 import images2 from '@/assets/img/base+star.png';
 import images1 from '@/assets/img/base.png';
-import { QueryClient } from '@tanstack/react-query';
+import { QueryClient, useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NextItemData } from './Progress';
 const queryClient = new QueryClient();
 
@@ -37,15 +37,10 @@ const Switcher = ({ state, setState }: { state: boolean; setState: React.Dispatc
 };
 
 const Form = ({ switcherState, setState }: { switcherState: boolean; setState: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  useEffect(() => {
-    const cachedData: NextItemData | undefined = queryClient.getQueryData(['item_limit']);
-    if (cachedData) {
-      console.log(cachedData);
-      console.log('fffffffff');
-    }
-    console.log('No data in cache');
-  }, []);
-
+  const queryClient = useQueryClient();
+  const data: NextItemData | undefined = queryClient.getQueryData(['next_item']);
+  if (!data) return <div>Loading...</div>;
+  console.log(data);
   return (
     <div>
       <p>ffffffffffffff</p>
