@@ -2,11 +2,10 @@
 
 import images2 from '@/assets/img/base+star.png';
 import images1 from '@/assets/img/base.png';
-import { QueryClient, useQueryClient } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useState } from 'react';
 import { NextItemData } from './Progress';
-const queryClient = new QueryClient();
 
 export const BodyForm = () => {
   const [switcherState, setSwitcherState] = useState(true);
