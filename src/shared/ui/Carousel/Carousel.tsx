@@ -1,8 +1,22 @@
 'use client';
 
 import { motion, useMotionValue } from 'framer-motion';
-import { FC, useEffect, useState } from 'react';
-import { BlocksProps, CarouselProps, DotsProps } from './types/types';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+
+export type CarouselProps = {
+  blockContent: string[];
+};
+
+export type DotsProps = {
+  imgIndex: number;
+  setImgIndex: Dispatch<SetStateAction<number>>;
+  blockContent: string[];
+};
+
+export type BlocksProps = {
+  imgIndex: number;
+  blockContent: string[];
+};
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;

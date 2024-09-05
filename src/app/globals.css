@@ -6,7 +6,7 @@
 
 body {
   color: '#171717';
-  background: '#F2F2F7';
+  background-color: '#EAEAEA';
 }
 
 @layer utilities {
