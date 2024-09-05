@@ -44,11 +44,13 @@ export const Progress = () => {
   const { data: next_item_data, isSuccess: isSuccessNextItemData } = useQuery({
     queryKey: ['next_item'],
     queryFn: getNextItemIndex,
+    staleTime: 80 * 1000,
   });
 
   const { data: item_limit_data, isSuccess: isSuccessItemLimitData } = useQuery({
     queryKey: ['item_limit'],
     queryFn: getItemLimit,
+    staleTime: 80 * 1000,
   });
 
   const next_item = isSuccessNextItemData ? parseInt(next_item_data.stack[0].num, 16) : 0; // 30

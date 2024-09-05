@@ -1,13 +1,23 @@
 import { create } from 'zustand';
 
 interface TimeState {
-  time: string;
-  setTime: (time: string) => void;
-  getTime: () => string;
+  time: {
+    timeNow: string;
+    timeStatus: string;
+  };
+  setTimeStatus: (time: string) => void;
 }
 
-export const useTimeStore = create<TimeState>((set, get) => ({
-  time: '00:00:00',
-  setTime: (time: string) => set({ time }),
-  getTime: () => get().time,
+export const useTimeStore = create<TimeState>((set) => ({
+  time: {
+    timeNow: '00:00:00',
+    timeStatus: '',
+  },
+  setTimeStatus: (time: string) =>
+    set((state) => ({
+      time: {
+        ...state.time,
+        timeNow: time,
+      },
+    })),
 }));

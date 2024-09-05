@@ -62,7 +62,7 @@ export const SwipeCarousel: FC<CarouselProps> = ({ blockContent }) => {
   };
 
   return (
-    <div className='relative overflow-hidden bg-mainColor w-3/6 h-fit rounded-30 '>
+    <div className='relative overflow-hidden bg-mainColor max-w-xl h-fit'>
       <motion.div
         drag='x'
         dragConstraints={{ left: 0, right: 0 }}
@@ -86,7 +86,7 @@ const Blocks: FC<BlocksProps> = ({ imgIndex, blockContent }) => {
         return (
           <motion.div
             key={index}
-            animate={{ scale: imgIndex === index ? 0.95 : 0.85 }}
+            animate={{ scale: imgIndex === index ? 1 : 0.55 }}
             transition={SPRING_OPTIONS}
             style={{ transform: 'none' }}
             className='w-full h-fit shrink-0 rounded-30 bg-mainColor px-8 pt-5 py-9 text-xl border-gray-300 border-2 text-textColor'>
@@ -106,7 +106,7 @@ const Dots: FC<DotsProps> = ({ blockContent, imgIndex, setImgIndex }) => {
           <button
             key={index}
             onClick={() => setImgIndex(index)}
-            className={`h-3 w-3 rounded-full transition-colors ${index === imgIndex ? 'bg-blue-600' : 'bg-neutral-500'}`}
+            className={`h-3 w-3 rounded-full transition-colors ${index === imgIndex ? 'bg-blue-600' : 'bg-[#9E9EA0]'}`}
           />
         );
       })}

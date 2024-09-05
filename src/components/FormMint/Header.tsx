@@ -16,7 +16,7 @@ export interface CountdownResult {
 
 export const Header = () => {
   const [countdownResult, setCountdownResult] = useState<CountdownResult | null>(null);
-  const { setTime } = useTimeStore();
+  const { setTimeStatus } = useTimeStore();
 
   useEffect(() => {
     const startDate = Temporal.PlainDate.from({ year: 2024, month: 9, day: 28 });
@@ -45,7 +45,7 @@ export const Header = () => {
     if (countdownResult?.status === 'Событие завершено' || countdownResult?.status === 'До начала события') {
       console.log(countdownResult?.status, 'time status');
 
-      setTime(countdownResult.status);
+      setTimeStatus(countdownResult.status);
     }
   }, [countdownResult?.status]);
 

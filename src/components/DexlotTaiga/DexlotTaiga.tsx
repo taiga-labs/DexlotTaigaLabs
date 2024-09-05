@@ -1,5 +1,6 @@
 import { SwipeCarousel } from '@/shared/ui/Carousel/Carousel';
 import { TitleSection } from '@/shared/ui/Title/TitleSection';
+import { FormMint } from '../FormMint/FormMint';
 
 const text: string[] = [
   'Интерактивный график: пользователю не надо больше вводить цену и количество клавиатурой, достаточно выставить точку на графике.',
@@ -11,10 +12,16 @@ const text: string[] = [
 
 export const DexlotTaiga = () => (
   <div>
-    <TitleSection titleText='“DexLOT” by Taiga.Labs' subTitleText='Не переживай за завтра – создай ордер сегодня!' />
-    <div className='px-12 flex flex-col gap-7'>
-      <GoalTaiga />
-      <SwipeCarousel blockContent={text} />
+    <TitleSection titleText='“DexLOT” by Taiga.Labs' />
+    <div className='px-12 grid grid-cols-2 gap-7 w-fit'>
+      <div className='col-span-1 grid grid-rows-2 gap-y-7'>
+        <GoalTaiga />
+        <SwipeCarousel blockContent={text} />
+      </div>
+      <div className='grid grid-cols-2'>
+        <h1>ffff</h1>
+        <FormMint />
+      </div>
     </div>
   </div>
 );
