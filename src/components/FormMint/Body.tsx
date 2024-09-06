@@ -36,7 +36,7 @@ const Switcher = ({ state, setState }: { state: boolean; setState: React.Dispatc
 
 const Form = ({ switcherState, setState }: { switcherState: boolean; setState: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const queryClient = useQueryClient();
-  console.log(queryClient.getQueryCache().find({ queryKey: ['posts'] }));
+  console.log(queryClient.getQueryData(['item_limit']));
 
   return (
     <div>
