@@ -1,4 +1,3 @@
-'use client';
 import { DexlotTaiga } from '@/components/DexlotTaiga/DexlotTaiga';
 import { OrderService } from '@/components/OrderService/OrderService';
 import { Preview } from '@/components/Preview/Preview';

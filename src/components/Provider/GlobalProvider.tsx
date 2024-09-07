@@ -5,13 +5,13 @@ import dynamic from 'next/dynamic';
 import { useLayoutEffect, useState } from 'react';
 
 const TonConnectUIProvider = dynamic(() => import('@tonconnect/ui-react').then((mod) => mod.TonConnectUIProvider), { ssr: false });
-export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
+export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   const [queryClient] = useState(
     () =>
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 60 * 1000,
+            staleTime: 10 * 1000,
           },
         },
       }),

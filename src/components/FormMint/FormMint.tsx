@@ -1,3 +1,4 @@
+'use client';
 import { BodyForm } from './Body';
 import { Header } from './Header';
 import { Progress } from './Progress';

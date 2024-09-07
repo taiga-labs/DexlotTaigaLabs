@@ -2,7 +2,7 @@ import images2 from '@/assets/img/base+star.png';
 import images1 from '@/assets/img/base.png';
 import { useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export const BodyForm = () => {
   const [switcherState, setSwitcherState] = useState(true);
@@ -33,16 +33,10 @@ const Switcher = ({ state, setState }: { state: boolean; setState: React.Dispatc
 };
 
 const Form = ({ switcherState, setState }: { switcherState: boolean; setState: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  const queryClient = useQueryClient();
-  const data = queryClient.getQueryData(['next_item']);
-  useEffect(() => {
-    if (!data) {
-      queryClient.invalidateQueries({
-        queryKey: ['next_item'],
-      });
-    }
-  }, [queryClient, data]);
-  console.log(data);
+  const cachedt = useQueryClient();
+  const dt = cachedt.getQueryData(['next_item']);
+
+  console.log(dt);
 
   return (
     <div>
