@@ -50,7 +50,7 @@ export const Header = () => {
   }, [countdownResult?.status]);
 
   return countdownResult ? (
-    <div className='w-max bg-backgroundFormColor rounded-sm text-start flex flex-col items-start'>
+    <div className='w-max rounded-sm text-start flex flex-col items-start'>
       <div className='flex flex-col gap-4 w-full text-[#aeaeb0]'>
         <div className='flex flex-col gap-1 justify-between'>
           <p>{countdownResult.dateTime}</p>

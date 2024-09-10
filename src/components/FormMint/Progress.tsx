@@ -1,6 +1,6 @@
 'use client';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { useGetItemLimit } from '@/shared/hooks/SkGetters/getItemLimit';
+import { useGetNextItemIndex } from '@/shared/hooks/SkGetters/getNextItem';
 import { useEffect, useState } from 'react';
 
 type StackItem = {
@@ -24,38 +24,13 @@ export interface NextItemData extends ItemLimitData {
 }
 
 export const Progress = () => {
-  const collectionAdress = 'EQCq7PZ_Hqlf6msXHyz7S8-OoW4Y1WqpR_1aN1xNUlZ5_xnc';
   const [currentProgress, setCurrentProgress] = useState(0);
-  const axiosInstance = axios.create({
-    baseURL: 'https://tonapi.io/v2/',
-    headers: {
-      Authorization: 'Bearer AEVAMEYY6FOJLKIAAAAATVETS53BAPUGJ2URHKLKKKJKFCTDAL63I7YFQJ2GUEBEAYWSWVA',
-    },
-  });
-  const getNextItemIndex = async () => {
-    const { data } = await axiosInstance.get<NextItemData>(`blockchain/accounts/${collectionAdress}/methods/get_collection_data`);
-    return data;
-  };
 
-  const getItemLimit = async () => {
-    const { data } = await axiosInstance.get<NextItemData>(`blockchain/accounts/${collectionAdress}/methods/get_items_limit`);
-    return data;
-  };
+  const { data: next_item_data, isSuccess: isSuccessNextItemData } = useGetNextItemIndex();
+  const { data: item_limit_data, isSuccess: isSuccessItemLimitData } = useGetItemLimit();
 
-  const { data: next_item_data, isSuccess: isSuccessNextItemData } = useQuery({
-    queryKey: ['next_item'],
-    queryFn: getNextItemIndex,
-    staleTime: 80 * 1000,
-  });
-
-  const { data: item_limit_data, isSuccess: isSuccessItemLimitData } = useQuery({
-    queryKey: ['item_limit'],
-    queryFn: getItemLimit,
-    staleTime: 80 * 1000,
-  });
-
-  const next_item = isSuccessNextItemData ? parseInt(next_item_data.stack[0].num, 16) : 0; // 30
-  const item_limit = isSuccessItemLimitData ? parseInt(item_limit_data.stack[0].num, 16) : 0; //500
+  const next_item = isSuccessNextItemData && next_item_data ? parseInt(next_item_data.stack[0].num, 16) : 0; // 30
+  const item_limit = isSuccessItemLimitData && item_limit_data ? parseInt(item_limit_data.stack[0].num, 16) : 0; //500
   const progressValue = Math.round((next_item / item_limit) * 100);
 
   useEffect(() => {

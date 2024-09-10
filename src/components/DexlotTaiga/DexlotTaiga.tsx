@@ -1,5 +1,7 @@
 import { SwipeCarousel } from '@/shared/ui/Carousel/Carousel';
 import { TitleSection } from '@/shared/ui/Title/TitleSection';
+import { Advantages } from '../FormMint/Advantages';
+import { Description } from '../FormMint/Description';
 import { FormMint } from '../FormMint/FormMint';
 
 const text: string[] = [
@@ -13,13 +15,16 @@ const text: string[] = [
 export const DexlotTaiga = () => (
   <div>
     <TitleSection titleText='“DexLOT” by Taiga.Labs' />
-    <div className='px-12 grid grid-cols-2 gap-7 w-fit'>
-      <div className='col-span-1 grid grid-rows-2 gap-y-7'>
+    <div className='px-12 flex flex-row justify-around gap-7 w-max'>
+      <div className='flex flex-col gap-y-7 w-fit mr-24'>
         <GoalTaiga />
         <SwipeCarousel blockContent={text} />
       </div>
-      <div className='grid grid-cols-2'>
-        <h1>ffff</h1>
+      <div className='grid grid-cols-2 gap-5'>
+        <div className='col-span-1 grid gap-5'>
+          <Description />
+          <Advantages />
+        </div>
         <FormMint />
       </div>
     </div>
