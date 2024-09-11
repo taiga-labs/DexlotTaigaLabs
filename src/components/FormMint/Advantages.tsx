@@ -1,9 +1,9 @@
 import NftGif from '@/assets/gif/nft_ani_1024.gif';
 
 export const Advantages = () => (
-  <div className='w-auto max-w-full md:w-[408px] h-min bg-mainColor border-2 border-gray-300 rounded-xl items-center flex flex-col pt-2'>
+  <div className='w-auto max-w-full md:w-[408px] h-min bg-mainColor border-2 border-gray-300 rounded-30 items-center flex flex-col pt-2'>
     <h1 className='text-xl text-textColor font-title text-center mt-4'>Вы получаете</h1>
-    <img src={NftGif.src} className='w-[300px] h-[300px] bg-lime-500 rounded-sm mt-[14px]' />
+    <img src={NftGif.src} className='w-[300px] h-[300px] bg-lime-500 mt-[14px] rounded-xl border-gray-300 border-2' />
 
     <div className='text-sm md:text-base text-textColor pl-4 mt-3'>
       <h3>🌲 Елки - мультироутинг по всем dex</h3>

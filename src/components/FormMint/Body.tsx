@@ -102,7 +102,7 @@ const Form = ({ switcherState, setState }: { switcherState: boolean; setState: R
   const isStopEventDisable = isStopEvents.isBeforeStartEvent || isStopEvents.isStopEvent;
 
   return (
-    <form className='flex flex-col gap-3' onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex flex-col gap-3 mt-14' onSubmit={handleSubmit(onSubmit)}>
       <h3>Amount up to 10</h3>
       <input
         type='number'
