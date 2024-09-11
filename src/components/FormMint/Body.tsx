@@ -14,7 +14,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 export const BodyForm = () => {
   const [switcherState, setSwitcherState] = useState(true);
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-auto'>
       <Switcher state={switcherState} setState={setSwitcherState} />
 
       <div className='flex justify-center items-center'>

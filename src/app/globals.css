@@ -9,6 +9,7 @@ body {
   background-color: '#EAEAEA';
 }
 
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
