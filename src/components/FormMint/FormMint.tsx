@@ -5,7 +5,7 @@ import { Progress } from './Progress';
 
 export const FormMint = () => {
   return (
-    <div className='max-w-[408px] h-auto bg-mainColor border-2 rounded-30 px-5 py-3 border-gray-300 gap-4'>
+    <div className='max-w-[408px] h-full bg-mainColor border-2 rounded-30 px-5 py-3 border-gray-300 gap-4'>
       <Header />
       <Progress />
       <BodyForm />

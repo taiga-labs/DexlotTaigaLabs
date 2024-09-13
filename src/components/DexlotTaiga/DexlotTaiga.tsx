@@ -15,12 +15,12 @@ const text: string[] = [
 export const DexlotTaiga = () => (
   <div>
     <TitleSection titleText='“DexLOT” by Taiga.Labs' />
-    <div className='flex md:flex-row flex-col justify-around gap-7 w-auto'>
-      <div className='flex flex-col gap-y-7 w-auto px-12 md:mr-24'>
+    <div className='w-max h-fit flex flex-col gap-7 px-12 md:flex-row md:w-auto'>
+      <div className='flex flex-col gap-y-7 w-auto'>
         <GoalTaiga />
         <SwipeCarousel blockContent={text} />
       </div>
-      <div className='justify-center items-center grid md:grid-cols-2 grid-cols-1 gap-5 px-12 justify-items-center'>
+      <div className='self-center w-max grid grid-cols-1 gap-5 md:grid-cols-2'>
         <div className='col-span-1 grid gap-5'>
           <Description />
           <Advantages />
@@ -32,7 +32,7 @@ export const DexlotTaiga = () => (
 );
 
 const GoalTaiga = () => (
-  <div className='max-w-[632px] h-fit rounded-30 bg-mainColor px-8 pt-5 py-9 text-xl space-y-5 border-gray-300 border-2'>
+  <div className='w-fit max-w-[632px] h-max rounded-30 bg-mainColor px-8 pt-5 py-9 text-xl space-y-5 border-gray-300 border-2'>
     <h2 className='text-xl font-bold'>Цель</h2>
     <p>
       Создать удобное веб-апп приложение для пользователей, которые не хотят мониторить рынок, чтобы продать или купить любой актив по нужной им

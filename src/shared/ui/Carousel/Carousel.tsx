@@ -62,7 +62,7 @@ export const SwipeCarousel: FC<CarouselProps> = ({ blockContent }) => {
   };
 
   return (
-    <div className='relative overflow-hidden bg-mainColor max-w-xl h-fit'>
+    <div className='relative overflow-hidden bg-mainColor max-w-[632px] h-fit'>
       <motion.div
         drag='x'
         dragConstraints={{ left: 0, right: 0 }}
