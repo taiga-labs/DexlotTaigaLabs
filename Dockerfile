@@ -1,9 +1,9 @@
 FROM node:lts AS build
-WORKDIR /app
-COPY package*.json ./
-RUN bun install
+WORKDIR /app 
+COPY package.json /app 
+RUN yarn install 
 COPY . .
-RUN bun next_build
+RUN yarn build
 
 FROM nginx:alpine AS runtime
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
