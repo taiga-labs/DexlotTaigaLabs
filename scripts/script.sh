@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DOCKERFILE_PATH="../Dockerfile"
-IMAGE_NAME="taiga_front_image"
-CONTAINER_NAME="taiga_front_container"
+IMAGE_NAME="taiga_dexlot_front_image"
+CONTAINER_NAME="taiga_dexlot_front_container"
 
 ping() {
     echo "pong"
