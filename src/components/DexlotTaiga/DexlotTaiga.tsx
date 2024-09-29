@@ -19,8 +19,8 @@ export const DexlotTaiga = () => (
         <GoalTaiga />
         <SwipeCarousel blockContent={text} />
       </div>
-      <div className='self-center w-max grid grid-cols-1 gap-5 md:grid-cols-2'>
-        <div className='col-span-1 grid gap-5 w-screen px-12'>
+      <div className='self-center w-full grid grid-cols-1 gap-5 md:grid-cols-2'>
+        <div className='col-span-1 grid gap-5 w-full justify-items-center'>
           <Description />
           <Advantages />
         </div>

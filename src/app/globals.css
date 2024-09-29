@@ -7,8 +7,14 @@
 body {
   color: '#171717';
   background-color: '#EAEAEA';
+  overflow-x: hidden;
 }
 
+/* 
+* {
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 3px rgba(224, 13, 13, 0.5);
+} */
 
 @layer utilities {
   .text-balance {
