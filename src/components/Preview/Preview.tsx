@@ -1,6 +1,5 @@
 'use client';
 import { AnimatedTextWord } from '@/shared/ui/AnimateText/AnimateText';
-import { TonConnectButton } from '@tonconnect/ui-react';
 import { motion } from 'framer-motion';
 
 export const Preview = () => (
@@ -16,10 +15,8 @@ export const Preview = () => (
         delay: 0.5,
         ease: [0, 0.05, 0.14, 0.21],
       }}
-      className='text-xl md:text-4xl font-semibold'>
+      className='text-xl md:text-4xl font-semibold text-center'>
       Не переживай за завтра – создай ордер сегодня!
     </motion.h3>
-
-    <TonConnectButton className='absolute top-4 right-20' />
   </div>
 );

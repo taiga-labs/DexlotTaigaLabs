@@ -1,6 +1,5 @@
 'use client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import dynamic from 'next/dynamic';
 import { useLayoutEffect, useState } from 'react';
 
@@ -36,7 +35,7 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
   return (
     <QueryClientProvider client={queryClient}>
       <TonConnectUIProvider manifestUrl='https://taiga-labs.github.io/dexlot.json'>{children}</TonConnectUIProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 };
